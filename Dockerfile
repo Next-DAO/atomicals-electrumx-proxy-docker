@@ -1,11 +1,11 @@
 FROM node:20-alpine
 
-ARG VERSION=master
+ARG VERSION=main
 
 ADD https://github.com/atomicals/electrumx-proxy/archive/${VERSION}.zip /tmp
 
 RUN set -ex && \
-    cd /tmp && unzip ${VERSION} && \
+    cd /tmp && unzip ${VERSION}.zip && \
     mv /tmp/electrumx-proxy-${VERSION} /app
 
 WORKDIR /app
