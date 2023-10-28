@@ -20,7 +20,7 @@ services:
       retries: 3
       start_period: 30s
     volumes:
-      - /data/electrumx-data:/data
+      - ./electrumx-data:/data
     environment:
       # modify to your bitcoin core rpc address with user and password
       # example: DAEMON_URL=rpcuser:rpcpassword@192.168.50.155:8332

@@ -7,11 +7,12 @@ Aim to provide a simple and easy way to run [atomicals-electrumx-proxy](/atomica
 
 1. Bitcoin Full Node with `txindex=1` and enable rpc.
 2. Docker with docker-compose.
-3. At least **100G** left in your storage.
 
 ## Usage
 
 ### 1. Download [docker-compose.yml](/raw/main/docker-compose.yml) to a folder.
+
+The folder's Disk should have at least **100G** left.
 
 Create an `.env` file with content below (**change to your own settings**):
 
@@ -25,6 +26,7 @@ DAEMON_URL=rpcuser:rpcpassword@192.168.50.111:8332
 docker-compose pull && docker-compose up -d
 ```
 
+- the electrumx indexes stored in `./electrumx-data` directory.
 - use `docker-compose ps` to check if electrumx is ready.
 - use `docker-compose logs -f` to check the logs.
 - use `docker-compose down` to stop the server.
