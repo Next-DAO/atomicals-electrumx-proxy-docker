@@ -1,0 +1,28 @@
+version: '3'
+services:
+  proxy:
+    image: lucky2077/atomicals-electrumx-proxy:latest
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      - ELECTRUMX_PORT=50001
+      - ELECTRUMX_HOST=electrumx
+    depends_on:
+      - electrumx
+  electrumx:
+    image: lucky2077/atomicals-electrumx:latest
+    restart: always
+    healthcheck:
+      test: "nc -z localhost 50001"
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    volumes:
+      - /data/electrumx-data:/data
+    environment:
+      # modify to your bitcoin core rpc address with user and password
+      # example: DAEMON_URL=rpcuser:rpcpassword@192.168.50.155:8332
+      - DAEMON_URL=${DAEMON_URL:?}
+      - COIN=BitCoin
