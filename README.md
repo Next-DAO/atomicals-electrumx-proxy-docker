@@ -1,6 +1,6 @@
 # Atomicals ElectrumX Proxy Docker
 
-Aim to provide a simple and easy way to run [atomicals-electrumx-proxy](/atomicals/electrumx-proxy) server.
+Aim to provide a simple and easy way to run [atomicals-electrumx-proxy](https://github.com/atomicals/electrumx-proxy) server with [atomicals-electrumx](https://github.com/atomicals/atomicals-electrumx) service.
 
 
 ## Requirements
@@ -10,7 +10,7 @@ Aim to provide a simple and easy way to run [atomicals-electrumx-proxy](/atomica
 
 ## Usage
 
-### 1. Download [docker-compose.yml](/raw/main/docker-compose.yml) to a folder.
+### 1. Download [docker-compose.yml](https://github.com/Next-DAO/atomicals-electrumx-proxy-docker/raw/main/docker-compose.yml) to a folder.
 
 The folder's Disk should have at least **100G** left.
 
@@ -31,7 +31,7 @@ docker-compose pull && docker-compose up -d
 - use `docker-compose logs -f` to check the logs.
 - use `docker-compose down` to stop the server.
 
-3. Used in [atomicals-js](/atomicals/atomicals-js)
+3. Used in [atomicals-js](https://github.com/atomicals/atomicals-js)
 
 Edit .env with `ELECTRUMX_PROXY_BASE_URL=http://localhost:8080/proxy`, then use all commands as usual.
 
