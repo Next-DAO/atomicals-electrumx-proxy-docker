@@ -22,7 +22,8 @@ services:
     volumes:
       - ./electrumx-data:/data
     environment:
-      # modify to your bitcoin core rpc address with user and password
-      # example: DAEMON_URL=rpcuser:rpcpassword@192.168.50.155:8332
-      - DAEMON_URL=${DAEMON_URL:?}
+      - DAEMON_URL=nextdao:nextdao@${IP:?}:8332
       - COIN=BitCoin
+      - PEER_DISCOVERY=off
+      - PEER_ANNOUNCE=""
+      - MAX_SEND=3000000
