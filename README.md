@@ -2,6 +2,7 @@
 
 Aim to provide a simple and easy way to run [atomicals-electrumx-proxy](https://github.com/atomicals/electrumx-proxy) server with [atomicals-electrumx](https://github.com/atomicals/atomicals-electrumx) service.
 
+[中文说明](https://github.com/Next-DAO/atomicals-electrumx-proxy-docker/blob/main/README.zh-CN.md)
 
 ## Requirements
 
