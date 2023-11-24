@@ -98,6 +98,6 @@ magnet:?xt=urn:btih:7KW5OXSWUQ2EFF57URE42GBRL2XCN5AI&dn=ElectrumX-Data-20231114
 当你下载完之后
 1. 如果你已经在运行了，执行 `docker-compose down` 停止服务。
 2. 删除 `docker-compose.yml` 所在目录下的 `electrumx-data` 目录。
-3. 解压 `ElectrumX-Data-20231114` 里的 zip 文件，得到 `electrumx-data` 目录。
+3. 解压 (使用 (7zip)[https://www.7-zip.org/]) `ElectrumX-Data-20231114` 里的 zip 文件，得到 `electrumx-data` 目录。
 4. 将 `electrumx-data` 移动到 `docker-compose.yml` 所在目录。
 5. 重新启动服务 `docker-compose up -d`。
