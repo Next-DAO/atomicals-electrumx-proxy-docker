@@ -101,3 +101,4 @@ magnet:?xt=urn:btih:7KW5OXSWUQ2EFF57URE42GBRL2XCN5AI&dn=ElectrumX-Data-20231114
 3. 解压 (使用 (7zip)[https://www.7-zip.org/]) `ElectrumX-Data-20231114` 里的 zip 文件，得到 `electrumx-data` 目录。
 4. 将 `electrumx-data` 移动到 `docker-compose.yml` 所在目录。
 5. 重新启动服务 `docker-compose up -d`。
+6. 大概 30 分钟后，可以提供服务。 ( 4 核 8G 内存运行 Linux 的电脑上测试)

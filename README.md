@@ -86,3 +86,4 @@ When your download is finished:
 3. Unzip (use [7zip](https://www.7-zip.org/)) zip files in `ElectrumX-Data-20231114`, you will get a `electrumx-data` directory.
 4. Move `electrumx-data` to the folder which contains `docker-compose.yml`.
 5. Start the server: `docker-compose up -d`.
+6. Abount 30 minutes later, the server will be ready. (Tested on a 4 cores 8G memory computer)
