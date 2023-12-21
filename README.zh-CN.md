@@ -88,17 +88,14 @@ docker-compose ps
 
 我也没找到其他原因，如果你知道，请告诉我。
 
-或者你可以下载同步好的  `electrumx-data`:
+因为 v1.3.6 版本修改了 leveldb 结构，所以需要从头同步。因此删除了无用磁力链接。
 
-#### 20231114
-```
-magnet:?xt=urn:btih:7KW5OXSWUQ2EFF57URE42GBRL2XCN5AI&dn=ElectrumX-Data-20231114
-```
+~~或者你可以下载同步好的  `electrumx-data`:~~
 
-当你下载完之后
-1. 如果你已经在运行了，执行 `docker-compose down` 停止服务。
-2. 删除 `docker-compose.yml` 所在目录下的 `electrumx-data` 目录。
-3. 解压 (使用 (7zip)[https://www.7-zip.org/]) `ElectrumX-Data-20231114` 里的 zip 文件，得到 `electrumx-data` 目录。
-4. 将 `electrumx-data` 移动到 `docker-compose.yml` 所在目录。
-5. 重新启动服务 `docker-compose up -d`。
-6. 大概 30 分钟后，可以提供服务。 ( 4 核 8G 内存运行 Linux 的电脑上测试)
+~~当你下载完之后~~
+~~1. 如果你已经在运行了，执行 `docker-compose down` 停止服务。~~
+~~2. 删除 `docker-compose.yml` 所在目录下的 `electrumx-data` 目录。~~
+~~3. 解压 (使用 (7zip)[https://www.7-zip.org/]) `ElectrumX-Data-20231114` 里的 zip 文件，得到 `electrumx-data` 目录。~~
+~~4. 将 `electrumx-data` 移动到 `docker-compose.yml` 所在目录。~~
+~~5. 重新启动服务 `docker-compose up -d`。~~
+~~6. 大概 30 分钟后，可以提供服务。 ( 4 核 8G 内存运行 Linux 的电脑上测试)~~

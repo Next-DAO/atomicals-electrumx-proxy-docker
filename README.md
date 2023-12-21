@@ -73,17 +73,15 @@ One guess is your disk is slow. You can try to use a SSD disk.
 
 I can't find any other reason. If you know, please tell me.
 
-Or you can download the `electrumx-data`:
+The v1.3.6 changed leveldb strcture, so you need to resync from the beginning. So I deleted the magnet link.
 
-```
-magnet:?xt=urn:btih:7KW5OXSWUQ2EFF57URE42GBRL2XCN5AI&dn=ElectrumX-Data-20231114
-```
+~~Or you can download the `electrumx-data`:~~
 
-When your download is finished:
+~~When your download is finished:~~
 
-1. Stop the server: `docker-compose down` if it is running.
-2. Delete `electrumx-data` directory in the folder which contains `docker-compose.yml`.
-3. Unzip (use [7zip](https://www.7-zip.org/)) zip files in `ElectrumX-Data-20231114`, you will get a `electrumx-data` directory.
-4. Move `electrumx-data` to the folder which contains `docker-compose.yml`.
-5. Start the server: `docker-compose up -d`.
-6. Abount 30 minutes later, the server will be ready. (Tested on a 4 cores 8G memory computer)
+~~1. Stop the server: `docker-compose down` if it is running.~~
+~~2. Delete `electrumx-data` directory in the folder which contains `docker-compose.yml`.~~
+~~3. Unzip (use [7zip](https://www.7-zip.org/)) zip files in `ElectrumX-Data-20231114`, you will get a `electrumx-data` directory.~~
+~~4. Move `electrumx-data` to the folder which contains `docker-compose.yml`.~~
+~~5. Start the server: `docker-compose up -d`.~~
+~~6. Abount 30 minutes later, the server will be ready. (Tested on a 4 cores 8G memory computer)~~
