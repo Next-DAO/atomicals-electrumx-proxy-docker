@@ -11,7 +11,7 @@ services:
     depends_on:
       - electrumx
   electrumx:
-    image: lucky2077/atomicals-electrumx:v1.3.6
+    image: lucky2077/atomicals-electrumx:v1.3.7.2
     restart: always
     healthcheck:
       test: "nc -z localhost 50001"
