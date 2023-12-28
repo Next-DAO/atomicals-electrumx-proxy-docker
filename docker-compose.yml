@@ -1,29 +1,59 @@
-version: '3'
+version: "3"
 services:
   proxy:
+    container_name: atomicals-electrumx-proxy
     image: lucky2077/atomicals-electrumx-proxy:latest
     restart: always
+    healthcheck:
+      test: "nc -z 192.168.251.253 8080"
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 45s
+    expose:
+      - 8080
     ports:
       - 8080:8080
+    networks:
+      atomicals:
+        ipv4_address: 192.168.251.253
     environment:
       - ELECTRUMX_PORT=50001
       - ELECTRUMX_HOST=electrumx
     depends_on:
       - electrumx
   electrumx:
-    image: lucky2077/atomicals-electrumx:v1.3.7.2
+    container_name: atomicals-electrumx
+    image: lucky2077/atomicals-electrumx:latest
     restart: always
     healthcheck:
-      test: "nc -z localhost 50001"
+      test: "nc -z 192.168.251.252 50001"
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 30s
+    expose:
+      - 50001 # tcp connection port
+      - 50002 # ssl connection port
+      - 50004 # websocket connection port
+      - 8000 # rpc service port
+    ports:
+      - 50001:50001
+      - 50002:50002
+      - 50004:50004
+      - 8000:8000
+    networks:
+      atomicals:
+        ipv4_address: 192.168.251.252
     volumes:
-      - ./electrumx-data:/data
+      - /data/electrumx:/data
     environment:
-      - DAEMON_URL=nextdao:nextdao@${IP:?}:8332
+      - DAEMON_URL=${DAEMON_URL:?}
       - COIN=BitCoin
-      - PEER_DISCOVERY=off
-      - PEER_ANNOUNCE=""
-      - MAX_SEND=3000000
+networks:
+  atomicals:
+    name: atomicals
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.251.0/24

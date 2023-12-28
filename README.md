@@ -11,10 +11,16 @@ Aim to provide a simple and easy way to run [atomicals-electrumx-proxy](https://
 ```ini
 server=1
 txindex=1
+# required otherwised electrumx server would complain error:
+#   ERROR:Daemon:daemon service refused: Not Found. Retrying occasionally...
+# from https://github.com/kyuupichan/electrumx/issues/1061
+rest=1
 
 # genearate with [rpcauth.py](https://github.com/bitcoin/bitcoin/blob/master/share/rpcauth/rpcauth.py)
-# equals to `rpcuser=nextdao` and `rpcpassword=nextdao`
-rpcauth=nextdao:cca838b4b19bdc6093f4e0312550361c$213834a29e8488804946c196781059a7ee0ac2b48dbf896b4c6852060d9d83dd
+# Usage: ./rpcauth.py <user> <password>
+# `rpcuser=alice`
+# `rpcpassword=alice`
+rpcauth=alice:15054eef64cb1aa8551622c1ab881e94$e1a085f3bc2fb12f4a864181ecbf53bcfd39a8921c67304d3439d4e3638c777b
 
 rpcallowip=127.0.0.1
 rpcallowip=172.0.0.0/8
@@ -42,6 +48,10 @@ docker-compose pull && docker-compose up -d
 - the electrumx indexes stored in `./electrumx-data` directory.
 - use `docker-compose logs -f` to check the logs.
 - use `docker-compose down` to stop the server.
+
+**NOTE**: Due to Docker Desktop is migrated to Compose V2, Please
+replace the `docker-compose` to `docker compose` if you're
+using Docker Desktop. More details please refer to [Migrate to Compose V2](https://docs.docker.com/compose/migrate/)
 
 ### 3. Used in [atomicals-js](https://github.com/atomicals/atomicals-js)
 
