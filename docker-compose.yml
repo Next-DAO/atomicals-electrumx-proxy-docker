@@ -46,7 +46,7 @@ services:
       atomicals:
         ipv4_address: 192.168.251.252
     volumes:
-      - /data/electrumx:/data
+      - ./data:/data
     environment:
       - DAEMON_URL=${DAEMON_URL:?}
       - COIN=BitCoin
