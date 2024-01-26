@@ -1,5 +1,13 @@
 # Atomicals RPC Server
 
+## Deprecation Notice
+
+As atomicals-electrumx support `http` from version v1.3.8.0, this project is deprecated.
+
+Use [atomicals-electrumx-docker](https://github.com/Next-DAO/atomicals-electrumx-docker)
+
+-----------------
+
 Aim to provide a simple and easy way to run [atomicals-electrumx-proxy](https://github.com/atomicals/electrumx-proxy) server with [atomicals-electrumx](https://github.com/atomicals/atomicals-electrumx) service.
 
 [中文说明](https://github.com/Next-DAO/atomicals-electrumx-proxy-docker/blob/main/README.zh-CN.md)

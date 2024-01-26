@@ -1,5 +1,13 @@
 # Atomicals RPC 节点
 
+## 废弃
+
+因为 atomicals-electrumx v1.3.8.0 版本开始支持 `http`，所以这个项目已经不再需要。
+
+请使用 [atomicals-electrumx-docker](https://github.com/Next-DAO/atomicals-electrumx-docker)
+
+-----------------
+
 提供简单的方法来运行 Atomicals RPC 节点，使用了 [electrumx-proxy](https://github.com/atomicals/electrumx-proxy) 和 [atomicals-electrumx](https://github.com/atomicals/atomicals-electrumx)。
 
 
